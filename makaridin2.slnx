@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="makaridin2/makaridin2.vcxproj" Id="9fa751e4-582c-476f-8885-4f46eb4c3a17" />
+</Solution>
