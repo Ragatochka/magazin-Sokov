@@ -42,12 +42,12 @@ int main()
 		{
 			std::cout << "Выберите товар: ";
 			std::cin >> num;
-			if (num != 0 && num <= nas )
+			if (num != 0 && num <= nas)
 			{
 
 				if (num == 1 || num == 2 || num == 3 || num == 4)
 				{
-					if (drop == true)
+					if (nastoyk == true)
 					{
 						for (int i = 0; i < loh; i++)
 						{
@@ -57,23 +57,29 @@ int main()
 								basketcol[i] = 0;
 							}
 						}
+						drop = true;
 					}
-					nastoyk = true;
+					
 				}
 				else if (num == 10)
 				{
-					if (nastoyk == true)
+					if (drop == true)
 					{
-						drop = true;
+						//drop = true;
 						nas--;
 						std::cout << "вы больше не можете брать Боярышник\n";
 						Sleep(1500);
 						system("cls");
 						break;
-					}			
-						
 					}
+					else
+					{
+
+					}
+
 				}
+			}
+		
 			
 			else if (num == 0)
 			{
@@ -85,9 +91,9 @@ int main()
 				Sleep(1500);
 				break;
 			}
-				std::cout << "\n";
-				std::cout << "Введите кол-во товара: ";
-				std::cin >> col;
+			std::cout << "\n";
+			std::cout << "Введите кол-во товара: ";
+			std::cin >> col;
 			
 			if (col == 0)
 			{
@@ -99,10 +105,14 @@ int main()
 
 		}
 
-
-
-
+		
+		if (num == 0)
+		{
+			break;
+		}
 	}
+
+	
 	for (int i = 0; i < loh; i++)
 	{
 		if (basket[i] == 1)
