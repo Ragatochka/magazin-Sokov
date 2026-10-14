@@ -38,72 +38,56 @@ int main()
 		std::cout << "Если корзина будет равна или больше 666 рублей то скидка 13%\n";
 		std::cout << "Для завершения покупок напишите \"0\"\n\n";
 
-		while (true)
-		{
+		while (true) {
 			std::cout << "Выберите товар: ";
 			std::cin >> num;
-			if (num != 0 && num <= nas)
-			{
 
-				if (num == 1 || num == 2 || num == 3 || num == 4)
-				{
-					if (nastoyk == true)
-					{
-						for (int i = 0; i < loh; i++)
-						{
-							if (basket[i] == 10)
-							{
-								basket[i] = 0;
-								basketcol[i] = 0;
-							}
-						}
-						drop = true;
-					}
-					
-				}
-				else if (num == 10)
-				{
-					if (drop == true)
-					{
-						//drop = true;
-						nas--;
-						std::cout << "вы больше не можете брать Боярышник\n";
-						Sleep(1500);
-						system("cls");
-						break;
-					}
-					else
-					{
-
-					}
-
-				}
-			}
-		
-			
-			else if (num == 0)
-			{
+			if (num == 0) {
 				break;
 			}
-			else if (num != 0 && num > 10)
-			{
+
+			if (num > 10 || num < 0) {
 				std::cout << "Такого товара нет в ассортименте!\n";
 				Sleep(1500);
-				break;
+				break; 
 			}
+
+			
+
+			
+			if (num >= 1 && num <= 4) {
+				drop = true; 
+
+				
+				for (int i = 0; i < loh; i++) {
+					if (basket[i] == 10) {
+						basket[i] = 0;
+						basketcol[i] = 0;
+					}
+				}
+			}
+			
+			else if (num == 10) {
+				if (drop == true) { 
+					std::cout << "Вы не можете брать Боярышник, если выбрали сок!\n";
+					Sleep(1500);
+					system("cls");
+					break;
+				}
+			}
+
 			std::cout << "\n";
 			std::cout << "Введите кол-во товара: ";
 			std::cin >> col;
-			
-			if (col == 0)
-			{
+			if (col == 0) {
 				break;
 			}
+
 			basket[loh] = num;
 			basketcol[loh] = col;
 			loh++;
-
 		}
+
 
 		
 		if (num == 0)
